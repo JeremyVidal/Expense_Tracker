@@ -1,0 +1,13 @@
+{% extends "layout.html" %}
+{% block content %}
+<section id="del_confirm">
+    <h3>Are you sure you want to delete record:</h3>
+    <table id="del_confirm_table">
+        <tr><th>Date</th><th>Type</th><th>Amount</th></tr>
+        <tr><td>{{ record.che_date }}</td><td>{{ record.che_type }}</td><td>{{ record.che_amount }}</td></tr>
+    </table>
+    <a class="button_green" href="{{ url_for('display_api.checking') }}">Cancel</a>
+    <a class="button_red" href="{{ url_for('checking_api.delete', rec_id=record.id) }}">Confirm</a>
+    <br>
+</section>
+{% endblock %}

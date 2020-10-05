@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% block content %}
+<body>
+<style>
+    body{background: url('/static/media/background1_1.jpg') no-repeat fixed center;}
+</style>
+<table id="logo_section">
+        <tr><td><a href="{{ url_for('auth_api.index') }}" ><img id="logo" src="/static/media/logo.png"></a></td><td>My<br>Expense Trax</td></tr>
+</table>
+<div id="add_nav">
+    <a href="{{ url_for('auth_api.index') }}" >LOGOUT</a>
+    <a href="{{ url_for('display_api.dis_401') }}" >401</a>
+</div>
+<section id="menu">
+    <section id="menu_links" class="links">
+        <table>
+            <tr><td><a href="{{ url_for('display_api.dashboard') }}">DASHBOARD</a></td></tr>
+            <tr><td><a href="{{ url_for('display_api.checking') }}">CHECKING</a></td></tr>
+            <tr><td><a href="{{ url_for('display_api.savings') }}">SAVINGS</a></td></tr>
+            <tr><td><a href="{{ url_for('transfer_api.transfer') }}">TRANSFER</a></td></tr>
+
+        </table>    
+    </section>
+</section>
+{% endblock %}

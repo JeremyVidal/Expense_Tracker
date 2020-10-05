@@ -1,0 +1,28 @@
+{% extends "layout.html" %}
+{% block content %}
+    <style>
+        body{background: url('/static/media/background1_1.jpg') no-repeat fixed center;}
+    </style>
+    <section id="sign_up">
+        {% if message %}
+        <style>
+            #sign_up_message {width: 375px; margin: 0 auto 10px auto; padding: 3px; background-color: {{mes_color}};}  
+        </style>
+        <div id="sign_up_message">
+            <p>{{message}}</p>
+        </div>
+        {% endif %}
+        <form id="sign_up_form" action="{{ url_for('auth_api.register') }}" method="POST">
+            <fieldset>
+            <legend>Sign Up Form</legend>
+            <br>
+                <input type="text" name="user_name" placeholder="Full Name"><br>
+                <input type="email" name="user_email" placeholder="Email"><br>
+                <input type="password" name="user_password" placeholder="Password"><br><br>
+                <input type="submit" value="Sign Up">
+            </fieldset>
+        </form>
+        <a class="back" href="{{ url_for('auth_api.index') }}">Back</a>
+    </section>
+    <footer id='footer'>&copy; Copyright Arcane LLC</footer>
+{% endblock %}

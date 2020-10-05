@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Expense Tracker</title>
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+        <link rel="icon" type="image/png" href="/static/media/python.png">
+    </head>
+    <body>
+        <table id="logo_section">
+            <tr><td><a href="{{ url_for('auth_api.index') }}" ><img id="logo" src="/static/media/logo.png"></a></td><td>My<br>Expense Trax</td></tr>
+        </table>
+
+{% block content %} 
+
+{% endblock %}
+    </body>
+</html>

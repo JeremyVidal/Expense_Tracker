@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="add_nav">
+    <a href="{{ url_for('auth_api.index') }}" >LOGOUT</a>
+    <a href="{{ url_for('display_api.menu') }}">MENU</a>
+</div>
+<section id="transfer">
+
+    <form name="transfer_form" action="{{ url_for('transfer_api.update') }}" method="POST">
+        <fieldset>
+            <legend>Account Transfers</legend>
+            <table id="transfer_table">
+                <tr>
+                    <td><label for="trans_amount">Amount</label></td>
+                    <td><input type="number" name="trans_amount" step="0.01"></td>
+                </tr>
+                <tr>
+                </tr>
+                    <td><label for="trans_type">Action</label></td>
+                    <td><select style="margin-left: 5px;" name="trans_type" required>
+                            <option value="Checking to Savings">Checking to Savings</option>
+                            <option value="Savings to Checking">Savings to Checking</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: center;">
+                        <input type="submit" name="submit" value="Transfer Amount">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</section>
+{% endblock %}

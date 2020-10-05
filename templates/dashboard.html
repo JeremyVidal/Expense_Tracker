@@ -1,0 +1,72 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="add_nav">
+    <a href="{{ url_for('auth_api.index') }}" >LOGOUT</a>
+    <a href="{{ url_for('display_api.menu') }}">MENU</a>
+</div>
+<section id="monthly_dashboard">
+    <h1>myDashboard</h1>
+    <h3>Monthly</h3>
+    <div id="income">
+        <table id="income_table">
+            <tr><th>Income</th></tr>
+            <tr><td>${{ mon_deposit }}</td></tr>
+        </table>
+    </div>  
+    <div id="expenses">
+        <table id="expense_table">
+            <tr><th>Expenses</th></tr>
+            <tr><td>${{ mon_withdraw }}</td></tr>
+        </table>
+    </div>   
+    <div id="difference">
+        <table id="difference_table">
+            <tr><th>Left Over</th></tr>
+            <tr><td>${{ mon_balance }}</td></tr>
+        </table>
+    </div>      
+</section>
+
+<section id="yearly_dashboard">
+    <h3>Yearly</h3>
+    <div id="yearly_income">
+        <table id="yearly_income_table">
+            <tr><th>YTD Income</th></tr>
+            <tr><td>${{ yr_deposit }}</td></tr>
+        </table>
+    </div>  
+    <div id="yearly_expenses">
+        <table id="yearly_expense_table">
+            <tr><th>YTD Expenses</th></tr>
+            <tr><td>${{ yr_withdraw }}</td></tr>
+        </table>
+    </div>   
+    <div id="yearly_difference">
+        <table id="yearly_difference_table">
+            <tr><th>YTD Left Over</th></tr>
+            <tr><td>${{ yr_balance }}</td></tr>
+        </table>
+    </div>      
+</section>
+<section id="current_dashboard">
+    <h3>Current</h3>
+    <div id="current_balance">
+        <table id="current_balance_table">
+            <tr><th>Current</th></tr>
+            <tr><td>${{ cur_balance }}</td></tr>
+        </table>
+    </div> 
+    <div id="current_savings">
+        <table id="current_savings_table">
+            <tr><th>Savings</th></tr>
+            <tr><td>${{ sav_balance }}</td></tr>
+        </table>
+    </div>  
+    <div id="net_worth">
+        <table id="net_worth_table">
+            <tr><th>Net Worth</th></tr>
+            <tr><td>${{ net_worth }}</td></tr>
+        </table>
+    </div>  
+</section>
+{% endblock %}

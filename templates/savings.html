@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="add_nav">
+        <a href="{{ url_for('auth_api.index') }}" >LOGOUT</a>
+        <a href="{{ url_for('display_api.menu') }}">MENU</a>
+    </div>
+<section id="add_form">
+
+    <h1>Savings Account</h1>
+    <table id="numbers_table">
+        {% if records %}
+        <tr><th>Current Balance</th></tr>
+        <tr><td>${{ balance }}</td></tr>
+        {% endif %}
+    </table>
+    <hr>
+    <form name="add_form" action="{{ url_for('savings_api.new') }}" method="POST">
+        <table id="input_table">
+            <tr><td><label for="date">Date</label></td>
+                <td><input type="date" name="sav_date" required></td>
+
+                <td><label for="amount">Amount</label></td>
+                <td><input type="number" name="sav_amount" min="0.00" step="0.01" placeholder="0.00" required></td>
+            </tr>
+            <tr>
+            </tr><td><label for="type">Type</label></td>
+                <td><select style="margin-left: 5px;" name="sav_type" required>
+                    <option value="Savings">Savings</option>
+                    <option value="Other">Other</option>
+                    </select>
+                </td>
+                <td><label for="description">Description</label></td>
+                <td><input type="text" name="sav_description" maxlength="300"  placeholder="Enter Description" required></td>
+            </tr>
+            <tr>
+                <td colspan="4" style="text-align: right;">
+                    <input type="submit" name="submit" value="Add Record"></td>
+            </tr>
+        </table>
+    </form>
+</section>
+<hr>
+<section id="display_records">
+    <table id="money_table">
+        {% if records %}
+        <tr><th>Date</th><th>Type</th><th>Amount</th><th>Description</th></tr>
+        {% endif %}
+        {% for record in records %}
+            <tr>
+                <td style="width: 125px; vertical-align: top;">{{ record.sav_date }}</td>
+                <td style="width: 150px; vertical-align: top;">{{ record.sav_type }}</td>
+                <td style="width: 100px; vertical-align: top;">{{ record.sav_amount }}</td>
+                <td style="width: 350px;  max-width: 350px; word-wrap: break-word; vertical-align: top;">{{ record.sav_description }}</td>
+                <td><a href="{{ url_for('savings_api.confirm', rec_id=record.id) }}"><button type="button" class="button_red">Delete</button></a></td>
+                {% if record.sav_type == 'Savings' or record.sav_type == 'Other': %}
+                    <td><a href="{{ url_for('savings_api.edit', rec_id=record.id) }}"><button type="button" class="button_green">Edit</button></a></td>
+                {% endif %}
+            </tr>
+        {% endfor %}
+    </table>
+</section>
+{% endblock %}

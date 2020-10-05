@@ -1,0 +1,11 @@
+server {
+    listen 80;
+    server_name 18.188.38.36;
+location / {
+  include proxy_params;
+  proxy_pass http://unix:/home/ubuntu/expensetracker/app.sock;
+    }
+
+
+
+}

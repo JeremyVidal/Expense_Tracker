@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>API Documentation</title>
+        <link rel="icon" type="image/png" href="/static/media/python.png">
+    
+    <style>
+        body {background-color: #101010; color: white; font-family: Arial, Helvetica, sans-serif;}
+        #small_grey {font-size: 15px; color: #787878; font-style: italic;}
+        h1 {color: red; font-size: 26px;}
+        h2 {color: red; font-size: 24px;}
+        h3 {color: blue; font-size: 22px;}
+        h4 {color: purple; font-size: 20px;}
+        h5 {color: purple; font-size: 18px;}
+        ul li {color: white;}
+        #red {color: red;}
+        #blue {color: blue;}
+        #green {color: green;}
+        .table {width: 600px; border-collapse: collapse;}
+        .table td {width: 50%; border: 1px solid white;  padding-left: 20px; }
+        .sidenav h2 {margin-left: 10px;}
+        .sidenav {height: 100%; border-right: 2px solid white; color: black; width: 320px; position: fixed; z-index: 1; top: 0; left: 0; background-color: #101010; overflow-x: hidden; padding: 4px 0 0 20px;}
+        .sidenav a {padding: 1px; text-decosdfration: none; font-size: 24px; color: white; display: block;}
+        .sidenav a:hover {color: purple;}
+        .main {margin-left: 333px; font-size: 20px; padding: 0 0px 0 20px;}
+        .image1{width: 75px; position: relative; float: right; margin: 20px;}
+        .image2{width: 100px; position: relative; float: right; margin-right: 20px;}
+    </style>
+    </head>
+    <body>
+        <section id="doc_content">
+            <div class="sidenav">
+                <img class="image1" src="/static/media/flask_background2.png">
+                <h2>Page Links</h2>
+                <ul>
+                    <li><a href="#routes">Routes</a></li>
+                    <li><a href="#blueprints">Blueprints</a></li>
+                    <li><a href="#endpoints">Endpoints</a></li>
+                        <ul>
+                            <li><a href="#end_app">app.py ('/')</a></li>
+                            <li><a href="#end_auth">/auth</a></li>
+                            <li><a href="#end_checking">/checking</a></li>
+                            <li><a href="#end_savings">/savings</a></li>
+                            <li><a href="#end_display">/display</a></li>
+                            <li><a href="#end_transfer">/transfer</a></li>
+                        </ul>
+                    <li><a href="#services">Services</a></li>
+                        <ul>
+                            <li><a href="#service_checking">checking</a></li>
+                            <li><a href="#service_savings">savings</a></li>
+                            <li><a href="#service_transfer">transfer</a></li>
+                            <li><a href="#service_totals">totals</a></li>
+                            <li><a href="#service_log">log</a></li>
+                        </ul>
+                    <li><a href="#models">Models</a></li>
+                        <ul>
+                            <li><a href="#users_table">User Table</a></li>
+                            <li><a href="#checking_table">Checking Table</a></li>
+                            <li><a href="#savings_table">Savings Table</a></li>
+                        </ul>
+                    <li><a href="#error_handling">Error Handling</a></li>
+                    <li><a href="#system_log">System Logs</a></li>
+                        <ul>
+                            <li><a href="#event_log">event_log.txt</a></li>
+                            <li><a href="#user_log">user_log.txt</a></li>
+                        </ul>
+                </ul>   
+            </div>
+            <div class="main">
+                <img class="image2" src="/static/media/flask_background2.png">
+                <h1>API Documentation</h1>
+                <h2 style="color: green;">Expense Tracker:</h2>
+                <p>A way to input expenses and income along with savings records for the purpose of tracking your money from month to month. This is a way to help find errors when reconciling your personal bank account.</p>
+                <p>This takes in input for withdraws, deposits for a Checking and Savings account.</p>
+                <h3 id="doc_sections">Sections of this documentation:</h3>
+                <ul>
+                    <li>Route Types</li>
+                    <li>Blueprints</li>
+                    <li>Endpoints</li>
+                    <li>Services</li>
+                    <li>Models</li>
+                    <li>Error Handling</li>
+                    <li>System Logs</li>
+                </ul>
+                <p id="small_grey">(This API uses a HTML frontend. Which means there are other routes associated with all 5 blueprints which are there for displaying HTML pages. All rendering of HTML pages needs to be hidden behind a route for displaying and protection.)</p>
+                <p id="small_grey">(If you plan on using a different front-end you can ignore the Route Type of "display" which is explaind in the next section.)</p>
+                <h2 id="routes">Route Types:</h2>
+                <ul>
+                <li><span id="green">"display"</span> - routes to display HTML pages</li>
+                <li><span id="green">"data parsing"</span> - routes that accept data, parse data and then does something with that data.</li>
+                <li><span id="green">"logout"</span> - removes the log in credentials</li>
+                </ul>
+                
+                <h2 id="blueprints">Blueprints:</h2>
+                
+                <p>There are 5 blueprints on top of the route in the app.py script where all routes are located.</p>
+                <p>The blueprints and the corresponding routes are:</p>
+                <ul>
+                    <li id="blue_app">app.py</li>
+                        <ul>
+                            <li>(‘/’)</li>
+                        </ul>
+                </ul>
+                <ul>
+                    <li id="blue_auth">auth</li>
+                        <ul>
+                            <li>sign up</li>
+                            <li>index</li>
+                            <li>register</li>
+                            <li>login</li>
+                        </ul>
+                </ul>
+                <ul>
+                    <li id="blue_checking">checking</li>
+                        <ul>
+                            <li>confirm</li>
+                            <li>edit</li>
+                            <li>new</li>
+                            <li>update</li>
+                            <li>delete</li>
+                        </ul>
+                </ul>
+                <ul>
+                    <li id="blue_savings">savings</li>
+                        <ul>
+                            <li>confirm</li>
+                            <li>edit</li>
+                            <li>new</li>
+                            <li>update</li>
+                            <li>delete</li>
+                        </ul>
+                </ul>
+                
+                <ul>
+                    <li id="blue_display">display</li>
+                        <ul>
+                            <li>menu</li>
+                            <li>dashboard</li>
+                            <li>checking</li>
+                            <li>savings</li>
+                        </ul>
+                </ul>
+                <ul>
+                    <li id="blue_transfer">transfer</li>
+                        <ul>
+                            <li>transfer</li>
+                            <li>update</li>
+                        </ul>
+                </ul>
+                
+                <h2 id="endpoints">Endpoints:</h2>
+                
+                <h4 id="end_app">app.py </h4>
+                <p><span id="blue">(‘/’) - ( route type: display )</span><br>
+                Description - This displays the <span id="red">login.html</span> page upon initial app load<br>
+                INPUT: None<br>
+                OUTPUT: None</p>
+                
+                <h4 id="end_auth">auth:</h4>
+                <p><span id="blue">/index - ( route type: display )</span><br>
+                Description - This displays the <span id="red">login.html</span> page after the user has already<br>
+                registered an account<br>
+                INPUT: None<br>
+                OUTPUT: None</p>
+                
+                <p id="end_register"><span id="blue">/register - ( route type: data parsing )</span><br>
+                Description - Registers a new user<br>
+                INPUT: User Name, User Email and Password<br>
+                OUTPUT: render_template <span id="red">sign_up.html</span></p>
+                
+                <p id="end_login"><span id="blue">/login - ( route type: data parsing )</span><br>
+                Description - Logs in the user<br>
+                INPUT: User Email and Password<br>
+                OUTPUT: redirects to <span id="blue">/display/menu</span></p>
+                
+                <p id="end_logout"><span id="blue">/logout - ( route type: logout )</span><br>
+                Description - Logs out the user<br>
+                INPUT: None<br>
+                OUTPUT: redirects to <span id="blue">/auth/index</span></p>
+                
+                <h4 id="end_checking">checking:</h4>
+                
+                <p id="end_check_confirm"><span id="blue">/confirm - ( route type: display )</span><br>
+                Description - Displays a form to confirm the deletion of the transaction<br>
+                INPUT: Checking transaction ID<br>
+                OUTPUT: Sends the ID to the render_template <span id="red">del_checking.html form</span><br>
+                
+                <p id="end_check_edit"><span id="blue">/edit - ( route type: display )</span><br>
+                Description - Displays a form to make the changes for the edit of the transaction<br>
+                INPUT: Checking transaction ID<br>
+                OUTPUT: Sends the ID to the render_template <span id="red">edit_checking.html form</span></p>
+                
+                <p id="end_check_new"><span id="blue">/new - ( route type: data parsing )</span><br>
+                Description - Adds record to checking table<br>
+                INPUT: Date, Type (Withdraw or Deposit), Amount, Description from the <span id="red">checking.html</span> form<br>
+                OUTPUT: Saves to database and then redirects to <span id="blue">/display/checking</span></p>
+                
+                <p id="end_check_delete"><span id="blue">/delete - ( route type: data parsing )</span><br>
+                Description - Deletes record from checking table<br>
+                INPUT: Checking transaction ID from the <span id="red">del_checking.html</span> form<br>
+                OUTPUT: Deletes the transaction from the database then redirects to <span id="blue">/display/checking</span></p>
+                
+                
+                <p id="end_check_update"><span id="blue">/update - ( route type: data parsing )</span><br>
+                Description - Updates the selected record of the checking table<br>
+                INPUT: Checking transaction ID from the <span id="red">edit_checking.html</span> form<br>
+                OUTPUT: Updates the transaction from the database then redirects to <span id="blue">/display/checking</span></p>
+                
+                <h4 id="end_savings">savings:</h4>
+                
+                <p id="end_sav_confirm"><span id="blue">/confirm - ( route type: display )</span><br>
+                Description - Displays a form to confirm the deletion of the transaction<br>
+                INPUT: Savings transaction ID<br>
+                OUTPUT: Sends the ID to the render_template <span id="red">del_savings.html form </span></p>
+                
+                <p id="end_sav_edit"><span id="blue">/edit - ( route type: display )</span><br>
+                Description - Displays a form to make the changes for the edit of the transaction<br>
+                INPUT: Savings transaction ID<br>
+                OUTPUT: Sends the ID to the render_template <span id="red">edit_savings.html form</span></p>
+                
+                <p id="end_sav_new"><span id="blue">/new - ( route type: data parsing )</span><br>
+                Description - Adds record to savings table<br>
+                INPUT: Date, Type (Withdraw or Deposit), Amount, Description from the <span id="red">savings.html</span> form<br>
+                OUTPUT: Saves to database and then redirects to <span id="blue">/display/savings</span>
+                
+                <p id="end_sav_delete"><span id="blue">/delete - ( route type: data parsing )</span><br>
+                Description - Deletes record from savings table<br>
+                INPUT: Savings transaction ID from the <span id="red">del_savings.html</span> form<br>
+                OUTPUT: Deletes the transaction from the database then redirects to <span id="blue">/display/savings</span></p>
+                
+                <p id="end_sav_update"><span id="blue">/update - ( route type: data parsing )</span><br>
+                Description - Updates the selected record of the savings table<br>
+                INPUT: Savings transaction ID from the <span id="red">edit_savings.html</span> form<br>
+                OUTPUT: Updates the transaction from the database then redirects to <span id="blue">/display/savings</span></p>
+                
+                
+                <h4 id="end_display">display:</h4>
+                <p id="dis_menu"><span id="blue">/menu - ( route type: display )</span><br>
+                Description - Displays the <span id="red">menu.html</span> page. This allows to select what area you would like to work with.<br>
+                <h5>The Areas are:</h5>
+                    <ul>
+                        <li>Dashboard</li>
+                        <li>Checking</li>
+                        <li>Savings</li>
+                        <li>Transfer</li>
+                    </ul>
+                INPUT: None<br>
+                OUTPUT: None</p>
+                
+                <p id="dis_dashboard"><span id="blue">/dashboard - ( route type: display )</span><br>
+                Description - This display a dashboard for the current Withdraws, Deposits and balances for the current month, year and the total actual current balance that goes beyond the current year.<br>
+                INPUT: queries for current month, current year and the entire table for current balance from both Checking\Savings tables for display on dashboard<br>
+                OUTPUT: render_template to <span id="red">dashboard.html</span></p>
+                
+                <p id="dis_checking"><span id="blue">/checking - ( route type: display )</span><br>
+                Description - This displays the form to add transactions to the Checking table. It also displays the records for the current year underneath the form. This has edit and delete buttons for each transaction. <br>
+                INPUT: Queries the Checking database for all records by the current year. Calculates the balance.<br>
+                OUTPUT: Sends the records and the balance to render_template <span id="red">checking.html</span></p>
+                
+                <p id="dis_savings"><span id="blue">/savings - ( route type: display )</span>
+                Description - This displays the form to add transactions to the Savings table. It also displays the records for the current year underneath the form. This has edit and delete buttons for each transaction.<br>
+                INPUT: Queries the Savings database for all records by the current year. Calculates the balance.<br>
+                OUTPUT: Sends the records and the balance to render_template <span id="red">savings.html</span></p>
+                
+                <h4 id="end_transfer">transfer:</h4>
+                <p id="trans_transfer"><span id="blue">/transfer - ( route type: display )</span><br>
+                Description - Display the <span id="red">transfer.html</span> form<br>
+                INPUT: None<br>
+                OUTPUT: None
+                
+                <p id="trans_update"><span id="blue">/update - ( route type: data parsing )</span><br>
+                Description - This is to transfer from one account to another. Checking to Savings, or Savings to Checking<br>
+                INPUT: Amount and the Action. The Action is either Checking to Savings, or Savings to checking <br>
+                OUTPUT: Update the Checking/Savings table with the new transactions. The type is “Transfer” and will either remove or add the amount given accordingly</p>
+                
+                
+                <h2 id="services">Services:</h2>
+                
+                <h4 id="service_checking">checking</h4>
+                <p id="add_checking"><span id="blue">add_checking - ( function )</span><br>
+                Description - Saves a Checking transaction<br>
+                INPUT: Takes in form data of Date, Type ( Withdraw, Deposit ), Amount and Description from the Checking Controller<br>
+                OUTPUT: Sends to the Save function of the Checking Model</p>
+                
+                <p id="delete_checking"><span id="blue">delete_checking - ( function )</span><br>
+                Description - Deletes a Checking transaction from the database<br>
+                INPUT: Checking ID from the Checking Controller<br>
+                OUTPUT: Sends to the Delete function of the Checking model</p>
+                
+                <p id="edit_checking"><span id="blue">edit_checking - ( function )</span><br>
+                Description - Grabs the transaction information from the database<br>
+                INPUT: Checking ID from the Checking Controller<br>
+                OUTPUT: Returns the data to be sent to the render_template <span id="red">edit_checking.html</span></p>
+                
+                <p id="update_checking"><span id="blue">update_checking - ( function )</span><br>
+                Description - Updates a Checking transaction<br>
+                INPUT: Takes in form data of Date, Type ( Withdraw, Deposit ), Amount and Description from the Checking Controller from the <span id="red">edit_checking.html</span><br>
+                OUTPUT: None, the Checking Controller upon completion redirects to <span id="blue">/display/checking</span></p>
+                
+                <h4 id="service_savings">savings:</h4>
+                
+                <p id="add_savings"><span id="blue">add_savings - ( function )</span><br>
+                Description - Saves a Savings transaction<br>
+                INPUT: Takes in form data of Date, Type ( Withdraw, Deposit ), Amount and Description from the savings controller<br>
+                OUTPUT: Sends to the Save function of the Savings Model</p>
+                
+                <p id="delete_savings"><span id="blue">delete_savings - ( function )</span><br>
+                Description - Deletes a Savings transaction from the database<br>
+                INPUT: Savings ID from the Savings Controller<br>
+                OUTPUT: Sends to the Delete function of the Savings model</p>
+                
+                <p id="edit_savings"><span id="blue">edit_savings - ( function )</span><br>
+                Description - Grabs the transaction information from the database<br>
+                INPUT: Savings ID from the Savings Controller<br>
+                OUTPUT: Returns the data to be sent to the render_template <span id="red">edit_savings.html</span></p>
+                
+                <p id="update_savings"><span id="blue">update_savings - ( function )</span><br>
+                Description - Updates a Savings transaction<br>
+                INPUT: Takes in form data of Date, Type ( Withdraw, Deposit ), Amount and Description from the Savings Controller from the <span id="red">edit_savings.html</span><br>
+                OUTPUT: None, the Savings Controller upon completion redirects to <span id="blue">/display/savings</span></p>
+                
+                <h4 id="service_transfer">transfer:</h4>
+                
+                <p id="transfer_rec"><span id="blue">transfer_rec - ( function )</span><br>
+                Description - Transfers from one Checking/Savings account to the other<br>
+                INPUT: Amount and Type (Checking to Savings, Savings to Checking) from the Transfer Controller<br>
+                OUTPUT: None, upon completion the Transfer Controller will redirects to <span id="blue">/display/menu</span></p>
+                
+                <h4 id="service_totals">totals:</h4>
+                
+                <p id="checking_totals"><span id="blue">checking_totals - ( function )</span><br>
+                Description - Takes in all records from the Display Controller to sum up amounts<br>
+                INPUT: Records from a query of all records by current year.<br>
+                OUTPUT: Balance from sum of Withdraws and sum of Deposits sent back to Display Controller to the render_template <span id="red">checking.html</span></p>
+                
+                <p id="savings_totals"><span id="blue">savings_totals - ( function )</span><br>
+                Description - Takes in all records from the Display Controller to sum up amounts<br>
+                INPUT: Records from a query of all records by current year.<br>
+                OUTPUT: Balance from sum of Withdraws and sum of Deposits sent back to Display Controller to the render_template <span id="red">savings.html</span></p>
+                
+                <p id="dash_totals"><span id="blue">dash_totals - ( function )</span><br>
+                Description - This calculates all the values for the <span id="red">dashobaord.html</span><br>
+                INPUT: Queries the Checking/ Savings tables and loops through the data to sum up the Withdraw and Deposit amounts. Calculates the balances.<br>
+                OUTPUT: Current Withdraws, Current Deposits and the Balance by month and year Current Balance for all records not by year, Savings total and the Net Worth which is Current Balance and Savings totals combined. Sends to the Display Controller to the render_template <span id="red">dashboard.html</span></p>
+                
+                <h4 id="service_log">log:</h4>
+                
+                <p id="log_register_user"><span id="blue">log_register_user - ( function )</span><br>
+                Description - This logs a new registered user to the <span id="green">user_log.txt</span><br>
+                INPUT: User Name and User Email from the Auth Controller. Saves the data along with the current date.<br>
+                OUTPUT: None, upon completion as long as the registration goes through the Auth Controller displays the render_template <span id="red">login.html</span></p>
+                
+                <p id="log_login_user"><span id="blue">log_login_user - ( function )</span><br>
+                Description - This logs a logged in user to the <span id="green">user_log.txt</span><br>
+                INPUT: User Email from the Auth Controller. Saves the data along with the current date.<br>
+                OUTPUT: None, upon completion as long as the login is successful the Auth Controller redirects to <span id="blue">/display/menu</span></p>
+                
+                <p id="delete_check_log"><span id="blue">delete_check_log - ( function )</span><br>
+                Description - This logs a deleted transaction to the <span id="green">event_log.txt</span><br>
+                INPUT: Checking ID and the User ID.<br>
+                OUTPUT: None</p>
+                
+                <p id="delete_savings_log"><span id="blue">delete_savings_log - ( function )</span><br>
+                Description - This logs a deleted transaction to the <span id="green">event_log.txt</span><br>
+                INPUT: Savings ID and the User ID.<br>
+                OUTPUT: None</p>
+                
+                <h2 id="models">Models - ( and fields )</h2>
+                <table id="users_table" class="table">
+                    <h4>Users Table</h4>
+                    <tr><th>Field</th><th>Type</th></tr>
+                    <tr><td>id</td><td>Integer</td></tr> 
+                    <tr><td>user_email</td><td>String ( 50 )</td></tr>
+                    <tr><td>user_password</td><td>String ( 300 )</td></tr>
+                    <tr><td>user_name</td><td>String ( 30 )</td></tr>
+                </table>
+                <table id="checking_table" class="table">
+                    <h4>Checkig Table</h4>
+                    <tr><th>Field</th><th>Type</th></tr>
+                    <tr><td>id</td><td>Integer</td></tr>
+                    <tr><td>che_date</td><td>Date</td></tr>
+                    <tr><td>che_type</td><td>String ( 8 )</td></tr>
+                    <tr><td>che_amount</td><td>Float</td></tr>
+                    <tr><td>che_description</td><td>String ( 500 )</td></tr>
+                    <tr><td>user_id</td><td>Integer</td></tr>
+                </table>
+                <table id="savings_table" class="table">
+                    <h4>Savings Table</h4>
+                    <tr><th>Field</th><th>Type</th></tr>
+                    <tr><td>id</td><td>Integer</td></tr>
+                    <tr><td>sav_date</td><td>Date</td></tr>
+                    <tr><td>sav_type</td><td>String ( 8 )</td></tr>
+                    <tr><td>sav_amount</td><td>Float</td></tr>
+                    <tr><td>sav_description</td><td>String ( 500 )</td></tr>
+                    <tr><td>user_id</td><td>Integer</td></tr>
+                </table> 
+                
+                <h2 id="error_handling">Error handling:</h2>
+                <p>Registration: If a email is already being used it will raise an error.<br>
+                Login: If a user tries to login with incorrect credentials it will raise an error.<br>
+                Empty Forms: If not data is entered into a form, no error will arise. It will just reload the form.</p>
+                
+                <h2 id="system_log">System logs:</h2>
+                <p id="event_log"><span id="green">event_log ( Text File )</span><br>
+                INPUT: This logs send the user_id along with the record data to the <span id="green">event_log.txt</span> file. This is when a transaction has been deleted.</p>
+                
+                <p id="user_log"><span id="green">user_log ( Text File )</span><br>
+                INPUT: This logs send the user_id along with the record data to the <span id="green">user_log.txt</span> file. This is to log when a user has logged in and at what datetime.</p>
+
+                
+                
+                
+            </div>
+        </section>
+    </body>
+</html>v

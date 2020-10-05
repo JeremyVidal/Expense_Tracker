@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="add_nav">
+    <a href="{{ url_for('auth_api.index') }}" >LOGOUT</a>
+    <a href="{{ url_for('display_api.menu') }}">MENU</a>
+</div>
+
+<section id="edit">
+
+    <form name="edit_form" action="{{ url_for('checking_api.update') }}" method="POST">
+        <fieldset>
+            <legend>Edit Checking Transaction</legend>
+            <table id="edit_table">
+                <input type="hidden" name="id" value="{{ record.id }}">
+
+                <tr><td><label for="che_date">Date</label></td>
+                    <td><input type="date" name="che_date" value="{{ record.che_date }}"></td>
+
+                    <td><label for="che_amount">Amount</label></td>
+                    <td><input type="number" name="che_amount" step="0.01" value="{{ record.che_amount }}"></td>
+                </tr>
+                <tr>
+                </tr><td><label for="che_type">Type</label></td>
+                    <td><select style="margin-left: 5px;" name="che_type" required>
+                            <option value="Withdraw" {% if record.che_type=='Withdraw' %} selected="selected"{% endif %} >Withdraw</option>
+                            <option value="Deposit" {% if record.che_type=='Deposit' %} selected="selected"{% endif %} >Deposit</option>
+                        </select>
+                    </td>
+                    <td><label for="che_description">Description</label></td>
+                    <td><input type="text" name="che_description" value="{{record.che_description}}"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: right;">
+                        <input type="submit" name="submit" value="Update Record">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</section>
+{% endblock %}

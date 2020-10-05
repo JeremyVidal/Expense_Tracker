@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+{% block content %}
+<div id="add_nav">
+    <a href="{{ url_for('auth_api.index') }}" >LOGOUT</a>
+    <a href="{{ url_for('display_api.menu') }}">MENU</a>
+</div>
+
+<section id="edit">
+
+    <form name="edit_form" action="{{ url_for('savings_api.update') }}" method="POST">
+        <fieldset>
+            <legend>Edit Checking Transaction</legend>
+            <table id="edit_table">
+                <input type="hidden" name="id" value="{{ record.id }}">
+
+                <tr><td><label for="che_date">Date</label></td>
+                    <td><input type="date" name="sav_date" value="{{ record.sav_date }}"></td>
+
+                    <td><label for="che_amount">Amount</label></td>
+                    <td><input type="number" name="sav_amount" step="0.01" value="{{ record.sav_amount }}"></td>
+                </tr>
+                <tr>
+                </tr><td><label for="che_type">Type</label></td>
+                    <td><select style="margin-left: 5px;" name="sav_type" required>
+                            <option value="Withdraw" {% if record.sav_type=='Savings' %} selected="selected"{% endif %} >Savings</option>
+                            <option value="Deposit" {% if record.sav_type=='Other' %} selected="selected"{% endif %} >Other</option>
+                        </select>
+                    </td>
+                    <td><label for="che_description">Description</label></td>
+                    <td><input type="text" name="sav_description" value="{{record.sav_description}}"></td>
+                </tr>
+                <tr>
+                    <td colspan="4" style="text-align: right;">
+                        <input type="submit" name="submit" value="Update Record">
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>
+</section>
+{% endblock %}

@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# git clone https://github.com/JeremyVidal/expensetracker
+
+export DATABASE_URL="postgresql://postgres:P1jbv191!@localhost/money_tracker" 
+if [[ -v DATABASE_URL ]]; then
+    echo '"Database URL" is Set to: - '$DATABASE_URL
+elif [[ ! -v DATABASE_URL ]]; then
+    echo 'Database URL is NOT Set'
+fi
+
+export SECRET_KEY='$alt&p3pp3R'
+if [[ -v SECRET_KEY ]]; then
+    echo '"Secret Key" is Set to: - '$SECRET_KEY
+elif [[ ! -v SECRET_KEY ]]; then
+    echo 'Secret Key is NOT Set'
+fi
+
+export CONFIG='Development'
+if [[ -v CONFIG ]]; then
+    echo '"Config" is Set to: - '$CONFIG
+elif [[ ! -v CONFIG ]]; then
+    echo 'Config is NOT Set'
+fi

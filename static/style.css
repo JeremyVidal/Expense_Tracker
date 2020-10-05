@@ -1,0 +1,123 @@
+body {margin: 0px; padding: 0px;}
+#footer {position: absolute; bottom: 0; width: 100%; padding: 10px; text-align: center; color: white; background-color: slateblue;}
+#logo {width: 100px;}
+#logo_section {position: absolute; top: 20px; left: 20px;}
+
+#add_nav {width: 100%; text-align: right; overflow: hidden; background-color: slateblue;}
+#add_nav a {float: right; color: white;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 17px;}
+#add_nav a:hover {background-color: #ddd;color: black;}
+#add_nav a.active {background-color: #4CAF50;color: white;}
+
+#sign_up_link {color: black; text-align: center; overflow: hidden;}
+#sign_up_link a {float: right; color: white;text-align: center;padding: 14px 16px;text-decoration: none;font-size: 17px;}
+#sign_up_link a:hover {background-color: #ddd;color: black;}
+#sign_up_link a.active {background-color: #ddd;color: black;}
+
+/* .back {padding: 2px; background-color: gray;} */
+.back {width: 100px; text-align: center; overflow: hidden; background-color: slateblue; border-radius: 25px;}
+.back {color: white; text-align: center;padding: 10px; text-decoration: none; font-size: 17px;}
+.back:hover {background-color: #ddd;color: black;}
+.back.active {background-color: #4CAF50;color: white;}
+
+/* Login Page */
+#login {width: 100%; margin-top: 200px; text-align: center;}
+#login_form {width: 400px; margin: auto;margin-bottom: 25px;}
+#login_form input {padding: 10px; font-size: 16px; margin: 2px;}
+#api_doc {margin-top: 70px; width: 100%; text-align: center;}
+#api_doc a {color: black;}
+#api_doc a:hover {color: black;}
+#api_doc a.active {color: black;}
+
+/* Sign Up Page */
+#sign_up {width: 100%; margin-top: 200px; text-align: center;}
+#sign_up_form {width: 400px; margin: auto;margin-bottom: 25px;}
+#sign_up_form input {padding: 10px; font-size: 16px; margin: 2px;}
+
+/* Add-Remove Page */
+#add_form{width: 100%; margin-bottom: 20px; text-align: center;}
+#numbers_table {display: inline-block; margin-bottom: 20px; border-collapse: collapse; padding:10px;}
+#numbers_table td {text-align: center; padding: 10px; width: 100px; vertical-align: top;}
+#input_table {display: inline-block; border-collapse: collapse; padding:10px;}
+#input_table input{padding: 5px;margin:5px; font-size: 16px;}
+#input_table select{padding: 10px;font-size: 18px;}
+#money_table {border-collapse: collapse; margin: 0 auto 40px auto;}
+#money_table td {border-bottom: 1px solid black; text-align: left;}
+#money_table th {padding-bottom: 15px; text-align: left;}
+.button_red {width: 100px; padding: 5px; background-color: lightcoral;}
+.button_green {width: 100px; padding: 5px; background-color: lime;}
+
+/* Dashboard Page */
+#monthly_dashboard {width: 100%; margin-top: 25px; text-align: center;}
+#income {display: inline-block; width: 200px; height: 100px; background-color: orange; vertical-align: middle;}
+#income_table {width: 100%;}
+#income_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#income_table td {font-size: 30px;}
+#expenses {display: inline-block; width: 200px; height: 100px; background-color: fuchsia; vertical-align: middle;}
+#expense_table {width: 100%;}
+#expense_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#expense_table td {font-size: 30px;}
+#difference {display: inline-block; width: 200px; height: 100px; background-color: greenyellow; vertical-align: middle;}
+#difference_table {width: 100%;}
+#difference_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#difference_table td {font-size: 30px;}
+
+#yearly_dashboard {width: 100%; margin-top: 15px; text-align: center;}
+#yearly_income {display: inline-block; width: 200px; height: 100px; background-color: deepskyblue; vertical-align: middle;}
+#yearly_income_table {width: 100%;}
+#yearly_income_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#yearly_income_table td {font-size: 30px;}
+#yearly_expenses {display: inline-block; width: 200px; height: 100px; background-color: yellow; vertical-align: middle;}
+#yearly_expense_table {width: 100%;}
+#yearly_expense_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#yearly_expense_table td {font-size: 30px;}
+#yearly_difference {display: inline-block; width: 200px; height: 100px; background-color: salmon; vertical-align: middle;}
+#yearly_difference_table {width: 100%;}
+#yearly_difference_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#yearly_difference_table td {font-size: 30px;}
+
+#current_dashboard {width: 100%; margin: 15px 0; text-align: center;}
+#current_balance {display: inline-block; width: 200px; height: 100px; background-color: PaleVioletRed ; vertical-align: middle;}
+#current_balance_table {width: 100%;}
+#current_balance_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#current_balance_table td {font-size: 30px;}
+
+#current_savings {display: inline-block; width: 200px; height: 100px; background-color: LawnGreen ; vertical-align: middle;}
+#current_savings_table {width: 100%;}
+#current_savings_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#current_savings_table td {font-size: 30px;}
+
+#net_worth {display: inline-block; width: 200px; height: 100px; background-color: DodgerBlue  ; vertical-align: middle;}
+#net_worth_table {width: 100%;}
+#net_worth_table th {font-size: 20px; text-align: left; text-decoration: underline;}
+#net_worth_table td {font-size: 30px;}
+
+/* Menu Page */
+#menu_links{display: inline-block; margin: 50PX; padding:10px; }
+#menu{width: 100%; height: 300px; margin-top: 100px; text-align: center; }
+.links td img {width: 30px;}
+.links td {border: none;}
+.links a {width: 200px; float: right; text-align:center; color: black; padding: 14px; text-decoration: none;font-size: 17px; background-color: #DABFDE;}
+.links a:hover {background-color: #DCFFFB;color: black;}
+.links a.active {background-color: #4CAF50;color: white;}
+
+/* Edit Page */
+#edit {width: 600px; margin: 150px auto 0 auto; text-align: center;}
+#edit_form {margin: auto;}
+#edit_table {display: inline-block; border-collapse: collapse; padding:10px;}
+#edit_table input{padding: 5px;margin:5px; font-size: 16px;}
+#edit_table select{padding: 10px;font-size: 18px;}
+
+/* Transfer page */
+#transfer {width: 400px; margin: 150px auto 0 auto; text-align: center;}
+#transfer_form {margin: auto;}
+#transfer_table {display: inline-block; border-collapse: collapse; padding:10px;}
+#transfer_table input{padding: 5px;margin:15px; font-size: 16px;}
+#transfer_table select{padding: 10px;font-size: 18px;}
+
+/* Delete Checking/Savings page */
+#del_confirm {background-color: DarkTurquoise; width: 400px; padding: 20px 20px 30px 20px; margin: auto; margin-top: 200px; border: 1px solid red; text-align: center;}
+.button_red {width: 100px; padding: 5px; margin: 5px; background-color: lightcoral;}
+.button_green {width: 100px; padding: 5px; margin: 5px; background-color: lime;}
+#del_confirm_table {margin:20px auto 30px auto; border-collapse: collapse;}
+#del_confirm_table td {width: 100px;}
+#del_confirm_table tr th {border-bottom: 1px solid blacks;}

@@ -1,0 +1,16 @@
+{% extends "layout.html" %}
+{% block content %}
+<section id="del_confirm">
+        
+        <p>Are you sure you want to delete record:</p>
+        <table id="del_confirm_table">
+            <tr><th>Date</th><th>Type</th><th>Amount</th></tr>
+            <tr><td>{{ record.sav_date }}</td><td>{{ record.sav_type }}</td><td>{{ record.sav_amount }}</td></tr>
+        </table>
+        
+        <a class="button_green" href="{{ url_for('display_api.savings') }}">Cancel</a>
+        <a class="button_red" href="{{ url_for('savings_api.delete', rec_id=record.id) }}">Confirm</a>
+        <br>
+
+</section>
+{% endblock %}

@@ -1,0 +1,71 @@
+Checking Deletion - (2019-12-09 15:56:44.854080). UserID: 1 | {'id': 21, 'che_amount': 1000.0, 'che_type': 'Deposit', 'che_description': 'Pay check', 'che_date': '2019-12-03'}
+Checking Deletion - (2019-12-09 15:56:44.854080). UserID: 1 | {'id': 22, 'che_amount': 100.47, 'che_type': 'Deposit', 'che_description': 'Job', 'che_date': '2019-12-03'}
+Savings Deletion - (2019-12-09 16:09:03.346777). UserID: 1 | {'sav_date': '2019-12-09', 'sav_type': 'Transfer', 'id': 13, 'sav_amount': 100.0, 'sav_description': 'Transfer from Checking'}
+Savings Deletion - (2019-12-09 16:09:03.346777). UserID: 1 | {'sav_date': '2019-12-08', 'sav_type': 'Savings', 'id': 10, 'sav_amount': 100.0, 'sav_description': 'Monthly Percent'}
+Savings Deletion - (2019-12-09 16:09:03.346777). UserID: 1 | {'sav_date': '2019-12-04', 'sav_type': 'Savings', 'id': 8, 'sav_amount': 100.0, 'sav_description': 'Monthly Percent'}
+Savings Deletion - (2019-12-09 16:09:03.346777). UserID: 1 | {'sav_date': '2019-12-03', 'sav_type': 'Other', 'id': 3, 'sav_amount': 50.0, 'sav_description': 'Extra Cash'}
+Checking Deletion - (2019-12-10 09:58:20.330318). UserID: 1 | {'id': 23, 'che_date': '2019-12-03', 'che_type': 'Deposit', 'che_amount': 50.0, 'che_description': 'Job'}
+Checking Deletion - (2019-12-10 19:41:21.002033). UserID: 1 | {'che_amount': 50.0, 'id': 24, 'che_type': 'Deposit', 'che_date': '2019-12-03', 'che_description': 'Job'}
+Checking Deletion - (2019-12-11 08:17:24.064446). UserID: 1 | {'che_date': '2019-12-01', 'id': 25, 'che_amount': 50.0, 'che_description': 'Job', 'che_type': 'Deposit'}
+Savings Deletion - (2019-12-11 08:53:23.382545). UserID: 1 | {'sav_amount': 25.0, 'sav_type': 'Other', 'sav_date': '2019-12-02', 'sav_description': 'Extra Cash', 'id': 15}
+Savings Deletion - (2019-12-11 08:53:23.382545). UserID: 1 | {'sav_amount': 100.0, 'sav_type': 'Withdraw', 'sav_date': '2019-12-02', 'sav_description': 'Other', 'id': 14}
+Checking Deletion - (2019-12-11 09:11:14.808098). UserID: 1 | {'che_type': 'Withdraw', 'che_date': '2019-12-03', 'che_amount': -25.0, 'che_description': 'Job', 'id': 28}
+Checking Deletion - (2019-12-11 09:14:53.584801). UserID: 1 | {'id': 27, 'che_date': '2019-12-04', 'che_description': 'Pay check', 'che_amount': 100.0, 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:14:53.584801). UserID: 1 | {'id': 30, 'che_date': '2019-12-04', 'che_description': 'CVS', 'che_amount': -100.0, 'che_type': 'Withdraw'}
+Checking Deletion - (2019-12-11 09:14:53.584801). UserID: 1 | {'id': 26, 'che_date': '2019-12-03', 'che_description': '100', 'che_amount': 50.0, 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:14:53.584801). UserID: 1 | {'id': 29, 'che_date': '2019-12-03', 'che_description': 'Walmart', 'che_amount': -25.0, 'che_type': 'Withdraw'}
+Checking Deletion - (2019-12-11 09:33:34.573272). UserID: 1 | {'che_amount': 25.0, 'che_description': 'CVS', 'id': 32, 'che_date': '2019-12-04', 'che_type': 'Withdraw'}
+Checking Deletion - (2019-12-11 09:33:34.573272). UserID: 1 | {'che_amount': 100.0, 'che_description': 'Pay check', 'id': 36, 'che_date': '2019-12-04', 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:33:34.573272). UserID: 1 | {'che_amount': 100.0, 'che_description': 'TEsting', 'id': 35, 'che_date': '2019-12-03', 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:36:23.800223). UserID: 1 | {'che_date': '2019-12-03', 'che_amount': 5.0, 'id': 34, 'che_description': 'Test', 'che_type': 'Withdraw'}
+Checking Deletion - (2019-12-11 09:36:23.800223). UserID: 1 | {'che_date': '2019-12-03', 'che_amount': 2.0, 'id': 33, 'che_description': 'Job', 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:36:23.800223). UserID: 1 | {'che_date': '2019-12-01', 'che_amount': 1000.0, 'id': 31, 'che_description': 'Pay check', 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:46:50.921614). UserID: 1 | {'che_description': 'M 1', 'id': 40, 'che_date': '2019-12-01', 'che_amount': 100.0, 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:46:50.921614). UserID: 1 | {'che_description': 'Walmart', 'id': 41, 'che_date': '2019-12-01', 'che_amount': 100.0, 'che_type': 'Withdraw'}
+Checking Deletion - (2019-12-11 09:46:50.921614). UserID: 1 | {'che_description': 'Test 1', 'id': 39, 'che_date': '2019-12-01', 'che_amount': 100.0, 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:46:50.921614). UserID: 1 | {'che_description': 'Rec 2', 'id': 38, 'che_date': '2019-12-01', 'che_amount': 100.0, 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:46:50.921614). UserID: 1 | {'che_description': 'Rec 1', 'id': 37, 'che_date': '2019-12-01', 'che_amount': 100.0, 'che_type': 'Deposit'}
+Checking Deletion - (2019-12-11 09:49:42.536631). UserID: 1 | {'che_date': '2019-12-02', 'che_type': 'Withdraw', 'che_amount': 100.0, 'id': 43, 'che_description': 'Walmart'}
+Checking Deletion - (2019-12-11 09:51:42.413229). UserID: 1 | {'che_type': 'Withdraw', 'che_description': 'Walmart', 'id': 44, 'che_date': '2019-12-01', 'che_amount': 100.0}
+Checking Deletion - (2019-12-11 09:57:02.894168). UserID: 1 | {'che_date': '2019-12-02', 'che_description': 'Walmart', 'che_type': 'Withdraw', 'che_amount': 100.0, 'id': 45}
+Checking Deletion - (2019-12-11 09:58:04.048888). UserID: 1 | {'che_type': 'Withdraw', 'id': 46, 'che_date': '2019-12-02', 'che_description': 'Walmart', 'che_amount': 100.0}
+Checking Deletion - (2019-12-11 09:59:49.457679). UserID: 1 | {'che_description': 'Pay check', 'che_amount': 100.0, 'id': 47, 'che_date': '2019-12-02', 'che_type': 'Withdraw'}
+Checking Deletion - (2019-12-11 09:59:49.457679). UserID: 1 | {'che_description': 'Walmart', 'che_amount': 100.0, 'id': 48, 'che_date': '2019-12-02', 'che_type': 'Withdraw'}
+Checking Deletion - (2019-12-11 10:01:04.742983). UserID: 1 | {'che_description': 'Walmart', 'che_date': '2019-12-02', 'id': 49, 'che_type': 'Withdraw', 'che_amount': 100.0}
+Checking Deletion - (2019-12-11 10:17:43.642297). UserID: 1 | {'id': 50, 'che_description': 'Walmart', 'che_date': '2019-12-03', 'che_amount': 100.0, 'che_type': 'Withdraw'}
+Checking Deletion - (2019-12-11 10:42:38.202588). UserID: 1 | {'che_description': 'Walmart', 'che_type': 'Withdraw', 'che_amount': 100.0, 'che_date': '2019-12-01', 'id': 51}
+Checking Deletion - (2019-12-11 10:43:31.797171). UserID: 1 | {'che_type': 'Withdraw', 'che_description': 'Walmart', 'che_amount': 100.0, 'id': 52, 'che_date': '2019-12-03'}
+Checking Deletion - (2019-12-11 10:44:04.347848). UserID: 1 | {'id': 53, 'che_description': 'Walmart', 'che_type': 'Withdraw', 'che_date': '2019-12-03', 'che_amount': 50.0}
+Checking Deletion - (2019-12-11 10:58:43.412076). UserID: 1 | {'che_type': 'Withdraw', 'che_amount': -25.0, 'che_date': '2019-12-03', 'id': 55, 'che_description': 'CVS'}
+Checking Deletion - (2019-12-11 10:58:43.412076). UserID: 1 | {'che_type': 'Withdraw', 'che_amount': -50.0, 'che_date': '2019-12-02', 'id': 54, 'che_description': 'Walmart'}
+Checking Deletion - (2019-12-11 10:58:43.412076). UserID: 1 | {'che_type': 'Deposit', 'che_amount': 1000.0, 'che_date': '2019-12-01', 'id': 42, 'che_description': 'Pay check'}
+Checking Deletion - (2019-12-11 10:58:43.412076). UserID: 1 | {'che_type': 'Deposit', 'che_amount': 1050.0, 'che_date': '2019-12-02', 'id': 56, 'che_description': 'Firiend'}
+Checking Deletion - (2019-12-11 10:58:43.412076). UserID: 1 | {'che_type': 'Withdraw', 'che_amount': -50.0, 'che_date': '2019-12-03', 'id': 57, 'che_description': 'Walmart'}
+Checking Deletion - (2019-12-11 10:58:43.412076). UserID: 1 | {'che_type': 'Deposit', 'che_amount': 100.0, 'che_date': '2019-12-13', 'id': 66, 'che_description': 'Job'}
+Savings Deletion - (2019-12-13 15:47:01.444204). UserID: 1 | {'sav_type': 'Transfer', 'sav_date': '2019-12-11', 'sav_amount': 50.99, 'id': 19, 'sav_description': 'Transfer from Checking'}
+Savings Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'id': 18, 'sav_date': '2019-12-11', 'sav_amount': -50.0, 'sav_description': 'Transfer to Checking', 'sav_type': 'Transfer'}
+Savings Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'id': 17, 'sav_date': '2019-12-11', 'sav_amount': 50.0, 'sav_description': 'Transfer from Checking', 'sav_type': 'Transfer'}
+Savings Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'id': 16, 'sav_date': '2019-12-01', 'sav_amount': 100.0, 'sav_description': 'Monthly Percent', 'sav_type': 'Savings'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Withdraw', 'che_amount': -100.0, 'id': 65, 'che_date': '2019-12-12', 'che_description': 'CVS'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Transfer', 'che_amount': -50.99, 'id': 67, 'che_date': '2019-12-11', 'che_description': 'Transfer to Savings'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Transfer', 'che_amount': 50.0, 'id': 60, 'che_date': '2019-12-11', 'che_description': 'Transfer From Savings'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Transfer', 'che_amount': -50.0, 'id': 59, 'che_date': '2019-12-11', 'che_description': 'Transfer to Savings'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Deposit', 'che_amount': 150.0, 'id': 63, 'che_date': '2019-12-09', 'che_description': 'Pay check'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Deposit', 'che_amount': 1000.0, 'id': 64, 'che_date': '2019-12-01', 'che_description': 'Pay check'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Deposit', 'che_amount': 1000.0, 'id': 58, 'che_date': '2019-12-01', 'che_description': 'Pay check'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Withdraw', 'che_amount': -50.0, 'id': 62, 'che_date': '2019-11-30', 'che_description': 'CVS'}
+Checking Deletion - (2019-12-13 19:18:25.468696). UserID: 1 | {'che_type': 'Deposit', 'che_amount': 100.0, 'id': 61, 'che_date': '2019-11-29', 'che_description': 'Pay check'}
+Checking Deletion - (2019-12-13 19:20:32.994638). UserID: 1 | {'id': 68, 'che_description': 'Pay check', 'che_amount': 1000.0, 'che_type': 'Deposit', 'che_date': '2019-12-01'}
+Checking Deletion - (2019-12-13 21:55:04.734587). UserID: 1 | {'che_description': 'Transfer From Savings', 'che_type': 'AddTransfer', 'id': 4, 'che_amount': 25.0, 'che_date': '2019-12-13'}
+Checking Deletion - (2019-12-13 21:55:04.734587). UserID: 1 | {'che_description': 'Transfer to Savings', 'che_type': 'RemoveTransfer', 'id': 3, 'che_amount': -50.0, 'che_date': '2019-12-13'}
+Savings Deletion - (2019-12-13 21:55:04.734587). UserID: 1 | {'sav_type': 'RemoveTransfer', 'sav_amount': -25.0, 'id': 3, 'sav_date': '2019-12-13', 'sav_description': 'Transfer to Checking'}
+Savings Deletion - (2019-12-13 21:55:04.734587). UserID: 1 | {'sav_type': 'AddTransfer', 'sav_amount': 50.0, 'id': 2, 'sav_date': '2019-12-13', 'sav_description': 'Transfer from Checking'}
+Savings Deletion - (2019-12-16 17:16:45.569165). UserID: 1 | {'sav_date': '2019-12-14', 'id': 5, 'sav_type': 'Withdraw', 'sav_amount': 100.0, 'sav_description': 'fasdflkjfjklasdflkdsaklf;dsfkdslfkdsflkdsjfdskfjdskfdshfkdslflkdsjfklsdfjkldsjflkjasdjfklsjfklasdjfl;ksdjfalk;sdjflkadsjflksdjfklsdajfklsdfkljasdlkfjladskjflkadsjflkjadslkfjsadlkfjlkadsjflkdsajfldkasjflkdjflkadsjflksdjfklsadfjlkadsjflkasdfjsadklfjadslkfjsdaklfjsdalkfjsdlkfjasdlkfjlasdk;fja;lfjkjfalk'}
+Savings Deletion - (2020-06-15 12:42:42.693548). UserID: 1 | {'sav_date': '2020-01-27', 'sav_amount': -50.0, 'sav_type': 'RemoveTransfer', 'id': 10, 'sav_description': 'Transfer to Checking'}
+Savings Deletion - (2020-06-15 12:42:42.693548). UserID: 1 | {'sav_date': '2020-01-25', 'sav_amount': 100.0, 'sav_type': 'AddTransfer', 'id': 9, 'sav_description': 'Transfer from Checking'}
+Savings Deletion - (2020-06-15 12:42:42.693548). UserID: 1 | {'sav_date': '2020-01-01', 'sav_amount': 200.0, 'sav_type': 'Savings', 'id': 8, 'sav_description': 'Nest Egg'}
+Checking Deletion - (2020-06-15 12:42:42.693548). UserID: 1 | {'id': 13, 'che_amount': 50.0, 'che_description': 'Transfer From Savings', 'che_type': 'AddTransfer', 'che_date': '2020-01-27'}
+Checking Deletion - (2020-06-15 12:42:42.693548). UserID: 1 | {'id': 11, 'che_amount': -100.0, 'che_description': 'Transfer to Savings', 'che_type': 'RemoveTransfer', 'che_date': '2020-01-25'}
+Checking Deletion - (2020-06-15 12:42:42.693548). UserID: 1 | {'id': 12, 'che_amount': 100.0, 'che_description': 'Job', 'che_type': 'Deposit', 'che_date': '2020-01-03'}
+Checking Deletion - (2020-06-15 12:42:42.693548). UserID: 1 | {'id': 10, 'che_amount': -100.0, 'che_description': 'Walmart', 'che_type': 'Withdraw', 'che_date': '2020-01-02'}
+Checking Deletion - (2020-06-15 12:42:42.693548). UserID: 1 | {'id': 9, 'che_amount': 500.0, 'che_description': 'Job', 'che_type': 'Deposit', 'che_date': '2020-01-01'}
